@@ -2,7 +2,7 @@
 
 A repo to showcase react work through demos of different ideas
 
-![CI Status](https://github.com/dhruv-m-patel/styled-react-app/workflows/Continuous%20Integration/badge.svg)
+![CI Status](https://github.com/dhruv-m-patel/react-demos/workflows/Continuous%20Integration/badge.svg)
 
 ### Setup
 
