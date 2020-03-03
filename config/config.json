@@ -1,0 +1,81 @@
+{
+  "title": "Styled React App",
+  "trustProxy": true,
+  "logging": {
+    "format": "combined",
+    "options": {}
+  },
+  "meddleware": {
+    "logger": {
+      "priority": 20,
+      "module": {
+        "name": "morgan",
+        "arguments": [
+          "config:logging.format",
+          "config:logging.options"
+        ]
+      }
+    },
+    "static": {
+      "priority": 21,
+      "module": {
+        "name": "express",
+        "method": "static",
+        "arguments": [
+          "root:./static"
+        ]
+      }
+    },
+    "assets": {
+      "priority": 22,
+      "module": {
+        "name": "express",
+        "method": "static",
+        "arguments": [
+          "root:./build-static"
+        ]
+      }
+    },
+    "cookie": {
+      "priority": 23,
+      "module": {
+        "name": "cookie-parser"
+      }
+    },
+    "jsonBody": {
+      "priority": 24,
+      "module": {
+        "name": "body-parser",
+        "method": "json"
+      }
+    },
+    "formBody": {
+      "priority": 25,
+      "module": {
+        "name": "body-parser",
+        "method": "urlencoded",
+        "arguments": [
+          { "extended": true }
+        ]
+      }
+    },
+    "routes": {
+      "priority": 26,
+      "module": {
+        "name": "express-enrouten",
+        "arguments": [
+          {
+            "directory": "path:./server/routes"
+          }
+        ]
+      }
+    },
+    "renderPage": {
+      "priority": 100,
+      "module": {
+        "name": "path:./server/middleware/renderPage",
+        "method": "default"
+      }
+    }
+  }
+}
