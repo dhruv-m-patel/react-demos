@@ -1,7 +1,7 @@
 {
-  "name": "styled-react-app",
+  "name": "react-demos",
   "version": "1.0.0",
-  "description": "A universal react app with styled-components support",
+  "description": "A repo to showcase react work through demos of different ideas",
   "main": "build/server/index.js",
   "scripts": {
     "build:server": "babel ./src --out-dir build",

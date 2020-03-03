@@ -17,6 +17,6 @@ DefaultHelmet.propTypes = {
 };
 
 DefaultHelmet.defaultProps = {
-  title: 'Styled React App',
-  description: 'A universal React app with styled-component support',
+  title: 'React Demos',
+  description: 'A repo to showcase react work through demos of different ideas',
 };
