@@ -12,3 +12,5 @@ $ npm install
 $ cp .env.example .env ## edit environment variables
 $ npm run start-dev
 ```
+
+Goal: Do all these projects with React: https://github.com/bradtraversy/vanillawebprojects
