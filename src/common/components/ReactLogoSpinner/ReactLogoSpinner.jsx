@@ -11,7 +11,7 @@ export default function ReactLogoSpinner() {
     animation: 20s ${AppLogoAnimation} infinite linear;
     max-width: 40px;
     display: inline;
-    margin-right: 1rem;
+    margin-right: 0.2rem;
   `;
 
   return (

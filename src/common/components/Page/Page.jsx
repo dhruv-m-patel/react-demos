@@ -1,12 +1,26 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import store from 'store';
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faToggleOn } from '@fortawesome/free-solid-svg-icons/faToggleOn';
-import { faToggleOff } from '@fortawesome/free-solid-svg-icons/faToggleOff';
+import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
+import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
 import Container from 'react-bootstrap/Container';
 import DefaultHelmet from '../DefaultHelmet';
+import ReactLogoSpinner from '../ReactLogoSpinner/ReactLogoSpinner';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    height: 100vh;
+
+    & body h1 {
+      font-size: 1.8rem;
+    }
+  }
+`;
 
 const DarkTheme = createGlobalStyle`
   body {
@@ -19,6 +33,15 @@ const DarkTheme = createGlobalStyle`
 
     & .text {
       color: var(--white);
+    }
+
+    & header > h1 {
+      color: white;
+    }
+
+    & table > thead > tr > th {
+      color: white;
+      font-weight: 1.1rem;
     }
   }
 `;
@@ -35,15 +58,10 @@ const LightTheme = createGlobalStyle`
     & .text {
       color: black;
     }
-  }
-`;
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    font-family: Helvetica, sans-serif;
-    font-size: 14px;
-    color: black;
-    height: 100vh;
+    & header > h1 {
+      color: #333333;
+    }
   }
 `;
 
@@ -55,18 +73,14 @@ const Content = styled.div`
     text-decoration: underline;
     cursor: pointer;
   }
+`;
 
-  & h1 {
-    color: #333;
+const NavLink = styled.div`
+  float: right;
+
+  &::after {
+    clear: both;
   }
-`;
-
-const TextLeft = styled.div`
-  text-align: left;
-`;
-
-const TextRight = styled.div`
-  text-align: right;
 `;
 
 const DarkModeTrigger = styled.span`
@@ -77,26 +91,12 @@ const DarkModeTrigger = styled.span`
 `;
 
 const App = styled.div`
-  text-align: center;
+  text-align: left;
 `;
 
-const AppLogoAnimation = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
-
-const AppLogo = styled.img`
-  animation: 20s ${AppLogoAnimation} infinite linear;
-  height: 40vmin;
-  pointer-events: none;
-`;
-
-const AppHeader = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+const Navigation = styled.header`
+  font-weight: bold;
+  padding: 1rem;
 `;
 
 export default function Page({
@@ -135,29 +135,25 @@ export default function Page({
       <Theme />
       <Content>
         <DefaultHelmet title={title} description={description} />
-        <TextRight>
-          Dark Mode
-          &nbsp;
-          <DarkModeTrigger>
-            <FontAwesomeIcon
-              icon={hasSwitchedToDarkMode ? faToggleOn : faToggleOff}
-              size="2x"
-              onClick={switchToDarkMode}
-            />
-          </DarkModeTrigger>
-        </TextRight>
         <App>
-          <AppHeader>
-            <AppLogo src="/images/logo.svg" alt="logo" />
-            <h2>Styled React App</h2>
-            <small>A universal react app with styled-component support.</small>
-          </AppHeader>
-          <br />
+          <Navigation>
+            <NavLink>
+              <DarkModeTrigger>
+                <FontAwesomeIcon
+                  icon={hasSwitchedToDarkMode ? faSun : faMoon}
+                  size="2x"
+                  onClick={switchToDarkMode}
+                />
+              </DarkModeTrigger>
+            </NavLink>
+            <h1>
+              <ReactLogoSpinner />
+              React Demos
+            </h1>
+          </Navigation>
           <br />
           <Container>
-            <TextLeft>
-              {children}
-            </TextLeft>
+            {children}
           </Container>
         </App>
       </Content>
