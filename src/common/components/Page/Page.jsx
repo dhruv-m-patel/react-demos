@@ -5,6 +5,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
 import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import DefaultHelmet from '../DefaultHelmet';
 import ReactLogoSpinner from '../ReactLogoSpinner/ReactLogoSpinner';
@@ -16,8 +18,13 @@ const GlobalStyle = createGlobalStyle`
     color: black;
     height: 100vh;
 
-    & body h1 {
+    & body h1 > a {
       font-size: 1.8rem;
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
 `;
@@ -27,15 +34,15 @@ const DarkTheme = createGlobalStyle`
     background-color: #282c34;
     color: white;
 
-    & a {
-      color: #61dafb;
-    }
-
     & .text {
       color: var(--white);
     }
 
-    & header > h1 {
+    & a {
+      color: #61dafb;
+    }
+
+    & header > h1 > a {
       color: white;
     }
 
@@ -51,15 +58,15 @@ const LightTheme = createGlobalStyle`
     background-color: white;
     color: black;
 
-    & a {
-      color: blue;
-    }
-
     & .text {
       color: black;
     }
 
-    & header > h1 {
+    & a {
+      color: blue;
+    }
+
+    & header > h1 > a{
       color: #333333;
     }
   }
@@ -101,7 +108,7 @@ const Navigation = styled.header`
 
 export default function Page({
   title,
-  description,
+  showHome,
   children,
 }) {
   const [hasSwitchedToDarkMode, setHasSwitchedToDarkMode] = useState(undefined);
@@ -134,7 +141,7 @@ export default function Page({
       <GlobalStyle />
       <Theme />
       <Content>
-        <DefaultHelmet title={title} description={description} />
+        <DefaultHelmet title={title} />
         <App>
           <Navigation>
             <NavLink>
@@ -147,8 +154,11 @@ export default function Page({
               </DarkModeTrigger>
             </NavLink>
             <h1>
-              <ReactLogoSpinner />
-              React Demos
+              <Link to="/">
+                {showHome ? <FontAwesomeIcon icon={faHome} /> : <ReactLogoSpinner />}
+                {showHome && <span>&nbsp;</span>}
+                {title}
+              </Link>
             </h1>
           </Navigation>
           <br />
@@ -164,11 +174,11 @@ export default function Page({
 Page.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
-  description: PropTypes.string,
+  showHome: PropTypes.bool,
 };
 
 Page.defaultProps = {
-  title: undefined,
-  description: undefined,
+  title: 'React Demos',
   children: undefined,
+  showHome: false,
 }
