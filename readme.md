@@ -21,4 +21,10 @@ $ npm run start-dev
 - Implement basic validations for each input
 - Show success if there are no errors
 
+#### Movie Seat Booking
+- Allow user to pick a movie and select seats
+- Unavailable seats cannot be selected and are marked out
+- UI updates selections as user picks movie and seats
+- Clearly differentiate between type of seat with appropriate legend and css styles
+
 Goal: Do all these projects with React: https://github.com/bradtraversy/vanillawebprojects
