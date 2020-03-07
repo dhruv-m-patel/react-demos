@@ -17,7 +17,7 @@ const MOVIES = [
   { id: 4, movie: 'Dolittle' },
 ];
 
-const Seat = styled.div`
+export const Seat = styled.div`
   display: inline-block;
   border: 2px solid grey;
   border-radius: 8px 9px 0 0;
@@ -82,7 +82,7 @@ export default function MovieSeatBooking() {
             <InputGroup.Prepend>
               <InputGroup.Text id="movieSelection">Select Movie</InputGroup.Text>
             </InputGroup.Prepend>
-            <Form.Control as="select" aria-describedBy="movieSelection" onChange={handleMovieSelection}>
+            <Form.Control as="select" aria-describedby="movieSelection" onChange={handleMovieSelection}>
               {MOVIES.map(({ id, movie }) => (
                 <option key={movie} value={id}>{movie}</option>
               ))}
