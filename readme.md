@@ -27,4 +27,9 @@ $ npm run start-dev
 - UI updates selections as user picks movie and seats
 - Clearly differentiate between type of seat with appropriate legend and css styles
 
+#### Shopping Cart
+- List products with a common style allowing user to pick their selections or remove them
+- If there are items added to cart, Show user their order total with a preview of items allowing to change quantity
+- Allow user to remove items from cart regardless they made change to quantity
+
 Goal: Do all these projects with React: https://github.com/bradtraversy/vanillawebprojects
