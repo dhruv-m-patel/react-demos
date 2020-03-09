@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Product from './Product';
 import Cart from './Cart';
 
-const PRODUCTS = [
+export const PRODUCTS = [
   {
     id: 'Fitbit_Versa2',
     display_name: 'Fitbit Versa 2',
