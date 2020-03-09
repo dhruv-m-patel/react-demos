@@ -32,4 +32,10 @@ $ npm run start-dev
 - If there are items added to cart, Show user their order total with a preview of items allowing to change quantity
 - Allow user to remove items from cart regardless they made change to quantity
 
+#### Expense Tracker
+- Display transaction history with total income and expense
+- Allow user to add new transaction
+- Allow user to delete existing transaction
+- Implement form validations
+
 Goal: Do all these projects with React: https://github.com/bradtraversy/vanillawebprojects
