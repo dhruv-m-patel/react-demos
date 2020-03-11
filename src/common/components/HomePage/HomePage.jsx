@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 import Page from '../Page';
 import styled from 'styled-components';
 
-const PROJECTS = [
+export const PROJECTS = [
   { project: 'Form Validator', link: '/form-validator' },
   { project: 'Movie Seat Booking', link: '/movie-seat-booking' },
   { project: 'Shopping Cart', link: '/shopping-cart' },
