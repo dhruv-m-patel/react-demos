@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 
-const NoTransactionsMessage = styled.p`
+export const NoTransactionsMessage = styled.p`
   color: red;
   font-size: 1.2rem;
   font-weight: bold;
