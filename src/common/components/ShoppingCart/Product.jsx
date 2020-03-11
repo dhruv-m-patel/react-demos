@@ -31,11 +31,11 @@ const ProductContainer = styled.div`
   }
 `;
 
-const CartItem = styled.div`
+export const CartItem = styled.div`
   padding: 2rem;
 `;
 
-const CartActions = styled.div`
+export const CartActions = styled.div`
   padding: 0 1rem;
 `;
 

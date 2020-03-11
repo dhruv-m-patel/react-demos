@@ -8,7 +8,7 @@ const Container = styled.div`
   padding: 1rem;
 `;
 
-const Amount = styled.div`
+export const Amount = styled.div`
   font-size: 1.3rem;
   font-weight: bold;
   text-transform: uppercase;

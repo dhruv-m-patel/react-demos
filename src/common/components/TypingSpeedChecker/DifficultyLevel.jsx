@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 
 export default function DifficultyLevel({
-  onChange
+  onChange,
 }) {
   return (
     <Form.Control as="select" onChange={onChange}>
