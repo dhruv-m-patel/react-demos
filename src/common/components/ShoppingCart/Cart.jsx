@@ -23,7 +23,7 @@ const CartContainer = styled.div`
   border-radius: 8px;
 `;
 
-const CartItem = styled.div`
+export const CartItem = styled.div`
   padding: 1rem;
   margin-bottom: 1.5rem;
 

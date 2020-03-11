@@ -87,7 +87,7 @@ export default function TransactionEditor({
         )}
       </Form.Group>
       <Form.Group>
-        <Form.Label>Date</Form.Label>
+        <Form.Label>Amount</Form.Label>
         <Form.Control type="number" name="amount" defaultValue={formValues.amount} onChange={handleValueChanged} />
         {formErrors.amount && (
           <Error>{formErrors.amount}</Error>
